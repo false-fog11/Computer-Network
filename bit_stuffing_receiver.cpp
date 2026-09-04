@@ -1,28 +1,30 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main() 
+int main()
 {
-    string data,destuffed="";
+    string received,data = "";
     int count=0;
 
-    cout<<"Enter stuffed data:";
-    cin>>data;
+    cout<<"Enter received bit string: ";
+    cin>> received;
 
-    for(int i =0;i<data.length();i++) {
-        destuffed+=data[i];
+    for (int i=0;i<received.length(); i++)
+    {
+        data+=received[i];
 
-        if(data[i]=='1')
+        if (received[i]=='1')
             count++;
         else
             count=0;
-
-        if(count==5) {
+        if (count==5 && i + 1 <received.length() && received[i+1]=='0')
+        {
             i++;
             count=0;
         }
     }
 
-    cout<<"Destuffed Data:"<<destuffed<<endl;
+    cout<<"After de-stuffing:"<<data<< endl;
+
     return 0;
 }

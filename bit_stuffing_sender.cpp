@@ -1,28 +1,33 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main() 
+int main()
 {
-    string data,destuffed="";
+    string data,stuffed = "";
     int count=0;
 
-    cout<<"Enter stuffed data:";
+    cout<<"Enter data: ";
     cin>>data;
 
-    for(int i =0;i<data.length();i++) {
-        destuffed+=data[i];
+    for (int i=0;i< data.length(); i++)
+    {
+        stuffed+= data[i];
 
-        if(data[i]=='1')
+        if (data[i]=='1')
+        {
             count++;
+            if (count==5)
+            {
+                stuffed+='0';
+                count=0;
+            }
+        }
         else
-            count=0;
-
-        if(count==5) {
-            i++;
+        {
             count=0;
         }
     }
+    cout<<"Stuffed Data: "<<stuffed<<endl;
 
-    cout<<"Destuffed Data:"<<destuffed<<endl;
     return 0;
 }

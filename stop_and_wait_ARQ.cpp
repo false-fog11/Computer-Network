@@ -15,7 +15,7 @@ int main()
     {
         cout<<"\nSender:Sending Frame "<<i;
 
-       //timer
+       //timer used
         cout<<"\nTimer started for Frame "<<i;
 
         for(int t=2; t>=1;t--)
