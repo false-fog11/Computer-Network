@@ -1,27 +1,28 @@
 #include<iostream>
 using namespace std;
-int main()
+
+int main() 
 {
-    string data,stuffed="";
+    string data,destuffed="";
     int count=0;
 
-    cout<<"enter data :";
+    cout<<"Enter stuffed data:";
     cin>>data;
 
-    for(char bit : data){
-        stuffed += bit;
+    for(int i =0;i<data.length();i++) {
+        destuffed+=data[i];
 
-        if(bit=='1')
-          count++;
+        if(data[i]=='1')
+            count++;
         else
-          count=0;
-
-        if(count==5){
-            stuffed +='0';
             count=0;
 
-        }  
+        if(count==5) {
+            i++;
+            count=0;
+        }
     }
-    cout<<"stuffed data:"<<stuffed<<endl;
+
+    cout<<"Destuffed Data:"<<destuffed<<endl;
     return 0;
 }
